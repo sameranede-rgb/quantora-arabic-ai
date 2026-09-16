@@ -164,7 +164,7 @@ function UnitsPage() {
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  {Object.entries(groups[group].units).map(([code, unit]) => (
+                  {unitEntries(group).map(([code, unit]) => (
                     <SelectItem key={code} value={code}>
                       {unit.label}
                     </SelectItem>
@@ -195,7 +195,7 @@ function UnitsPage() {
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  {Object.entries(groups[group].units).map(([code, unit]) => (
+                  {unitEntries(group).map(([code, unit]) => (
                     <SelectItem key={code} value={code}>
                       {unit.label}
                     </SelectItem>
