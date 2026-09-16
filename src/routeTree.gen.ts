@@ -15,6 +15,9 @@ import { Route as AiRouteImport } from './routes/ai'
 import { Route as AnalysesIndexRouteImport } from './routes/analyses.index'
 import { Route as AnalysesIdRouteImport } from './routes/analyses.$id'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
+import { Route as AuthLoginRouteImport } from './routes/auth.login'
+import { Route as AuthResetRouteImport } from './routes/auth.reset'
+import { Route as AuthSignupRouteImport } from './routes/auth.signup'
 import { Route as PricesIndexRouteImport } from './routes/prices.index'
 import { Route as PricesIdRouteImport } from './routes/prices.$id'
 import { Route as ToolsIndexRouteImport } from './routes/tools.index'
@@ -53,6 +56,21 @@ const AnalysesIdRoute = AnalysesIdRouteImport.update({
 const ApiChatRoute = ApiChatRouteImport.update({
   id: '/api/chat',
   path: '/api/chat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthLoginRoute = AuthLoginRouteImport.update({
+  id: '/auth/login',
+  path: '/auth/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthResetRoute = AuthResetRouteImport.update({
+  id: '/auth/reset',
+  path: '/auth/reset',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthSignupRoute = AuthSignupRouteImport.update({
+  id: '/auth/signup',
+  path: '/auth/signup',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PricesIndexRoute = PricesIndexRouteImport.update({
@@ -107,6 +125,9 @@ export interface FileRoutesByFullPath {
   '/ai': typeof AiRoute
   '/analyses/$id': typeof AnalysesIdRoute
   '/api/chat': typeof ApiChatRoute
+  '/auth/login': typeof AuthLoginRoute
+  '/auth/reset': typeof AuthResetRoute
+  '/auth/signup': typeof AuthSignupRoute
   '/prices/$id': typeof PricesIdRoute
   '/tools/calculator': typeof ToolsCalculatorRoute
   '/tools/currency': typeof ToolsCurrencyRoute
@@ -124,6 +145,9 @@ export interface FileRoutesByTo {
   '/ai': typeof AiRoute
   '/analyses/$id': typeof AnalysesIdRoute
   '/api/chat': typeof ApiChatRoute
+  '/auth/login': typeof AuthLoginRoute
+  '/auth/reset': typeof AuthResetRoute
+  '/auth/signup': typeof AuthSignupRoute
   '/prices/$id': typeof PricesIdRoute
   '/tools/calculator': typeof ToolsCalculatorRoute
   '/tools/currency': typeof ToolsCurrencyRoute
@@ -142,6 +166,9 @@ export interface FileRoutesById {
   '/ai': typeof AiRoute
   '/analyses/$id': typeof AnalysesIdRoute
   '/api/chat': typeof ApiChatRoute
+  '/auth/login': typeof AuthLoginRoute
+  '/auth/reset': typeof AuthResetRoute
+  '/auth/signup': typeof AuthSignupRoute
   '/prices/$id': typeof PricesIdRoute
   '/tools/calculator': typeof ToolsCalculatorRoute
   '/tools/currency': typeof ToolsCurrencyRoute
@@ -161,6 +188,9 @@ export interface FileRouteTypes {
     | '/ai'
     | '/analyses/$id'
     | '/api/chat'
+    | '/auth/login'
+    | '/auth/reset'
+    | '/auth/signup'
     | '/prices/$id'
     | '/tools/calculator'
     | '/tools/currency'
@@ -178,6 +208,9 @@ export interface FileRouteTypes {
     | '/ai'
     | '/analyses/$id'
     | '/api/chat'
+    | '/auth/login'
+    | '/auth/reset'
+    | '/auth/signup'
     | '/prices/$id'
     | '/tools/calculator'
     | '/tools/currency'
@@ -195,6 +228,9 @@ export interface FileRouteTypes {
     | '/ai'
     | '/analyses/$id'
     | '/api/chat'
+    | '/auth/login'
+    | '/auth/reset'
+    | '/auth/signup'
     | '/prices/$id'
     | '/tools/calculator'
     | '/tools/currency'
@@ -213,6 +249,9 @@ export interface RootRouteChildren {
   AiRoute: typeof AiRoute
   AnalysesIdRoute: typeof AnalysesIdRoute
   ApiChatRoute: typeof ApiChatRoute
+  AuthLoginRoute: typeof AuthLoginRoute
+  AuthResetRoute: typeof AuthResetRoute
+  AuthSignupRoute: typeof AuthSignupRoute
   PricesIdRoute: typeof PricesIdRoute
   ToolsCalculatorRoute: typeof ToolsCalculatorRoute
   ToolsCurrencyRoute: typeof ToolsCurrencyRoute
@@ -267,6 +306,27 @@ declare module '@tanstack/react-router' {
       path: '/api/chat'
       fullPath: '/api/chat'
       preLoaderRoute: typeof ApiChatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth/login': {
+      id: '/auth/login'
+      path: '/auth/login'
+      fullPath: '/auth/login'
+      preLoaderRoute: typeof AuthLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth/reset': {
+      id: '/auth/reset'
+      path: '/auth/reset'
+      fullPath: '/auth/reset'
+      preLoaderRoute: typeof AuthResetRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth/signup': {
+      id: '/auth/signup'
+      path: '/auth/signup'
+      fullPath: '/auth/signup'
+      preLoaderRoute: typeof AuthSignupRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/prices/': {
@@ -341,6 +401,9 @@ const rootRouteChildren: RootRouteChildren = {
   AiRoute: AiRoute,
   AnalysesIdRoute: AnalysesIdRoute,
   ApiChatRoute: ApiChatRoute,
+  AuthLoginRoute: AuthLoginRoute,
+  AuthResetRoute: AuthResetRoute,
+  AuthSignupRoute: AuthSignupRoute,
   PricesIdRoute: PricesIdRoute,
   ToolsCalculatorRoute: ToolsCalculatorRoute,
   ToolsCurrencyRoute: ToolsCurrencyRoute,

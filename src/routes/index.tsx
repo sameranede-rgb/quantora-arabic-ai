@@ -78,10 +78,10 @@ function Index() {
         </div>
         <div className="mt-8 text-center">
           <Button asChild variant="outline" className="rounded-full">
-            <a href="/tools">
+            <Link to="/tools">
               <Sparkles className="size-4" />
               تصفّح جميع الأدوات
-            </a>
+            </Link>
           </Button>
         </div>
       </section>
