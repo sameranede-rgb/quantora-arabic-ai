@@ -10,8 +10,13 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AccountRouteImport } from './routes/account'
 import { Route as AiRouteImport } from './routes/ai'
+import { Route as AnalysesIndexRouteImport } from './routes/analyses.index'
+import { Route as AnalysesIdRouteImport } from './routes/analyses.$id'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
+import { Route as PricesIndexRouteImport } from './routes/prices.index'
+import { Route as PricesIdRouteImport } from './routes/prices.$id'
 import { Route as ToolsIndexRouteImport } from './routes/tools.index'
 import { Route as ToolsCalculatorRouteImport } from './routes/tools.calculator'
 import { Route as ToolsCurrencyRouteImport } from './routes/tools.currency'
@@ -25,14 +30,39 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AccountRoute = AccountRouteImport.update({
+  id: '/account',
+  path: '/account',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AiRoute = AiRouteImport.update({
   id: '/ai',
   path: '/ai',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AnalysesIndexRoute = AnalysesIndexRouteImport.update({
+  id: '/analyses/',
+  path: '/analyses/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnalysesIdRoute = AnalysesIdRouteImport.update({
+  id: '/analyses/$id',
+  path: '/analyses/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiChatRoute = ApiChatRouteImport.update({
   id: '/api/chat',
   path: '/api/chat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricesIndexRoute = PricesIndexRouteImport.update({
+  id: '/prices/',
+  path: '/prices/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricesIdRoute = PricesIdRouteImport.update({
+  id: '/prices/$id',
+  path: '/prices/$id',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ToolsIndexRoute = ToolsIndexRouteImport.update({
@@ -73,90 +103,125 @@ const ToolsUnitsRoute = ToolsUnitsRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/account': typeof AccountRoute
   '/ai': typeof AiRoute
+  '/analyses/$id': typeof AnalysesIdRoute
   '/api/chat': typeof ApiChatRoute
+  '/prices/$id': typeof PricesIdRoute
   '/tools/calculator': typeof ToolsCalculatorRoute
   '/tools/currency': typeof ToolsCurrencyRoute
   '/tools/datetime': typeof ToolsDatetimeRoute
   '/tools/percentage': typeof ToolsPercentageRoute
   '/tools/travel': typeof ToolsTravelRoute
   '/tools/units': typeof ToolsUnitsRoute
+  '/analyses/': typeof AnalysesIndexRoute
+  '/prices/': typeof PricesIndexRoute
   '/tools/': typeof ToolsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/account': typeof AccountRoute
   '/ai': typeof AiRoute
+  '/analyses/$id': typeof AnalysesIdRoute
   '/api/chat': typeof ApiChatRoute
+  '/prices/$id': typeof PricesIdRoute
   '/tools/calculator': typeof ToolsCalculatorRoute
   '/tools/currency': typeof ToolsCurrencyRoute
   '/tools/datetime': typeof ToolsDatetimeRoute
   '/tools/percentage': typeof ToolsPercentageRoute
   '/tools/travel': typeof ToolsTravelRoute
   '/tools/units': typeof ToolsUnitsRoute
+  '/analyses': typeof AnalysesIndexRoute
+  '/prices': typeof PricesIndexRoute
   '/tools': typeof ToolsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/account': typeof AccountRoute
   '/ai': typeof AiRoute
+  '/analyses/$id': typeof AnalysesIdRoute
   '/api/chat': typeof ApiChatRoute
+  '/prices/$id': typeof PricesIdRoute
   '/tools/calculator': typeof ToolsCalculatorRoute
   '/tools/currency': typeof ToolsCurrencyRoute
   '/tools/datetime': typeof ToolsDatetimeRoute
   '/tools/percentage': typeof ToolsPercentageRoute
   '/tools/travel': typeof ToolsTravelRoute
   '/tools/units': typeof ToolsUnitsRoute
+  '/analyses/': typeof AnalysesIndexRoute
+  '/prices/': typeof PricesIndexRoute
   '/tools/': typeof ToolsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/account'
     | '/ai'
+    | '/analyses/$id'
     | '/api/chat'
+    | '/prices/$id'
     | '/tools/calculator'
     | '/tools/currency'
     | '/tools/datetime'
     | '/tools/percentage'
     | '/tools/travel'
     | '/tools/units'
+    | '/analyses/'
+    | '/prices/'
     | '/tools/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/account'
     | '/ai'
+    | '/analyses/$id'
     | '/api/chat'
+    | '/prices/$id'
     | '/tools/calculator'
     | '/tools/currency'
     | '/tools/datetime'
     | '/tools/percentage'
     | '/tools/travel'
     | '/tools/units'
+    | '/analyses'
+    | '/prices'
     | '/tools'
   id:
     | '__root__'
     | '/'
+    | '/account'
     | '/ai'
+    | '/analyses/$id'
     | '/api/chat'
+    | '/prices/$id'
     | '/tools/calculator'
     | '/tools/currency'
     | '/tools/datetime'
     | '/tools/percentage'
     | '/tools/travel'
     | '/tools/units'
+    | '/analyses/'
+    | '/prices/'
     | '/tools/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AccountRoute: typeof AccountRoute
   AiRoute: typeof AiRoute
+  AnalysesIdRoute: typeof AnalysesIdRoute
   ApiChatRoute: typeof ApiChatRoute
+  PricesIdRoute: typeof PricesIdRoute
   ToolsCalculatorRoute: typeof ToolsCalculatorRoute
   ToolsCurrencyRoute: typeof ToolsCurrencyRoute
   ToolsDatetimeRoute: typeof ToolsDatetimeRoute
   ToolsPercentageRoute: typeof ToolsPercentageRoute
   ToolsTravelRoute: typeof ToolsTravelRoute
   ToolsUnitsRoute: typeof ToolsUnitsRoute
+  AnalysesIndexRoute: typeof AnalysesIndexRoute
+  PricesIndexRoute: typeof PricesIndexRoute
   ToolsIndexRoute: typeof ToolsIndexRoute
 }
 
@@ -169,6 +234,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/account': {
+      id: '/account'
+      path: '/account'
+      fullPath: '/account'
+      preLoaderRoute: typeof AccountRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/ai': {
       id: '/ai'
       path: '/ai'
@@ -176,11 +248,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AiRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/analyses/': {
+      id: '/analyses/'
+      path: '/analyses'
+      fullPath: '/analyses/'
+      preLoaderRoute: typeof AnalysesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/analyses/$id': {
+      id: '/analyses/$id'
+      path: '/analyses/$id'
+      fullPath: '/analyses/$id'
+      preLoaderRoute: typeof AnalysesIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/chat': {
       id: '/api/chat'
       path: '/api/chat'
       fullPath: '/api/chat'
       preLoaderRoute: typeof ApiChatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/prices/': {
+      id: '/prices/'
+      path: '/prices'
+      fullPath: '/prices/'
+      preLoaderRoute: typeof PricesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/prices/$id': {
+      id: '/prices/$id'
+      path: '/prices/$id'
+      fullPath: '/prices/$id'
+      preLoaderRoute: typeof PricesIdRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/tools/': {
@@ -237,14 +337,19 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AccountRoute: AccountRoute,
   AiRoute: AiRoute,
+  AnalysesIdRoute: AnalysesIdRoute,
   ApiChatRoute: ApiChatRoute,
+  PricesIdRoute: PricesIdRoute,
   ToolsCalculatorRoute: ToolsCalculatorRoute,
   ToolsCurrencyRoute: ToolsCurrencyRoute,
   ToolsDatetimeRoute: ToolsDatetimeRoute,
   ToolsPercentageRoute: ToolsPercentageRoute,
   ToolsTravelRoute: ToolsTravelRoute,
   ToolsUnitsRoute: ToolsUnitsRoute,
+  AnalysesIndexRoute: AnalysesIndexRoute,
+  PricesIndexRoute: PricesIndexRoute,
   ToolsIndexRoute: ToolsIndexRoute,
 }
 export const routeTree = rootRouteImport
