@@ -99,19 +99,18 @@ function UnitsPage() {
     result = convertTemp(numeric, tempFrom, tempTo);
     toLabel = tempUnits[tempTo];
   } else {
-    const units = groups[group].units;
-    const fromUnit = units[from] ?? Object.values(units)[0];
-    const toUnit = units[to] ?? Object.values(units)[0];
+    const fromUnit = unitOf(group, from);
+    const toUnit = unitOf(group, to);
     result = (numeric * fromUnit.factor) / toUnit.factor;
     toLabel = toUnit.label;
   }
 
-  const changeGroup = (next: keyof typeof groups | "temperature") => {
+  const changeGroup = (next: GroupKey | "temperature") => {
     setGroup(next);
     if (next !== "temperature") {
       const codes = Object.keys(groups[next].units);
-      setFrom(codes[0]);
-      setTo(codes[1] ?? codes[0]);
+      setFrom(codes[0] ?? "");
+      setTo(codes[1] ?? codes[0] ?? "");
     }
   };
 
