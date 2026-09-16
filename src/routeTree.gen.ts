@@ -10,33 +10,258 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AccountRouteImport } from './routes/account'
+import { Route as AiRouteImport } from './routes/ai'
+import { Route as AnalysesIndexRouteImport } from './routes/analyses.index'
+import { Route as AnalysesIdRouteImport } from './routes/analyses.$id'
+import { Route as ApiChatRouteImport } from './routes/api/chat'
+import { Route as AuthLoginRouteImport } from './routes/auth.login'
+import { Route as AuthResetRouteImport } from './routes/auth.reset'
+import { Route as AuthSignupRouteImport } from './routes/auth.signup'
+import { Route as PricesIndexRouteImport } from './routes/prices.index'
+import { Route as PricesIdRouteImport } from './routes/prices.$id'
+import { Route as ToolsIndexRouteImport } from './routes/tools.index'
+import { Route as ToolsCalculatorRouteImport } from './routes/tools.calculator'
+import { Route as ToolsCurrencyRouteImport } from './routes/tools.currency'
+import { Route as ToolsDatetimeRouteImport } from './routes/tools.datetime'
+import { Route as ToolsPercentageRouteImport } from './routes/tools.percentage'
+import { Route as ToolsTravelRouteImport } from './routes/tools.travel'
+import { Route as ToolsUnitsRouteImport } from './routes/tools.units'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AccountRoute = AccountRouteImport.update({
+  id: '/account',
+  path: '/account',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AiRoute = AiRouteImport.update({
+  id: '/ai',
+  path: '/ai',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnalysesIndexRoute = AnalysesIndexRouteImport.update({
+  id: '/analyses/',
+  path: '/analyses/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnalysesIdRoute = AnalysesIdRouteImport.update({
+  id: '/analyses/$id',
+  path: '/analyses/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiChatRoute = ApiChatRouteImport.update({
+  id: '/api/chat',
+  path: '/api/chat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthLoginRoute = AuthLoginRouteImport.update({
+  id: '/auth/login',
+  path: '/auth/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthResetRoute = AuthResetRouteImport.update({
+  id: '/auth/reset',
+  path: '/auth/reset',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthSignupRoute = AuthSignupRouteImport.update({
+  id: '/auth/signup',
+  path: '/auth/signup',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricesIndexRoute = PricesIndexRouteImport.update({
+  id: '/prices/',
+  path: '/prices/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricesIdRoute = PricesIdRouteImport.update({
+  id: '/prices/$id',
+  path: '/prices/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ToolsIndexRoute = ToolsIndexRouteImport.update({
+  id: '/tools/',
+  path: '/tools/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ToolsCalculatorRoute = ToolsCalculatorRouteImport.update({
+  id: '/tools/calculator',
+  path: '/tools/calculator',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ToolsCurrencyRoute = ToolsCurrencyRouteImport.update({
+  id: '/tools/currency',
+  path: '/tools/currency',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ToolsDatetimeRoute = ToolsDatetimeRouteImport.update({
+  id: '/tools/datetime',
+  path: '/tools/datetime',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ToolsPercentageRoute = ToolsPercentageRouteImport.update({
+  id: '/tools/percentage',
+  path: '/tools/percentage',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ToolsTravelRoute = ToolsTravelRouteImport.update({
+  id: '/tools/travel',
+  path: '/tools/travel',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ToolsUnitsRoute = ToolsUnitsRouteImport.update({
+  id: '/tools/units',
+  path: '/tools/units',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/account': typeof AccountRoute
+  '/ai': typeof AiRoute
+  '/analyses/$id': typeof AnalysesIdRoute
+  '/api/chat': typeof ApiChatRoute
+  '/auth/login': typeof AuthLoginRoute
+  '/auth/reset': typeof AuthResetRoute
+  '/auth/signup': typeof AuthSignupRoute
+  '/prices/$id': typeof PricesIdRoute
+  '/tools/calculator': typeof ToolsCalculatorRoute
+  '/tools/currency': typeof ToolsCurrencyRoute
+  '/tools/datetime': typeof ToolsDatetimeRoute
+  '/tools/percentage': typeof ToolsPercentageRoute
+  '/tools/travel': typeof ToolsTravelRoute
+  '/tools/units': typeof ToolsUnitsRoute
+  '/analyses/': typeof AnalysesIndexRoute
+  '/prices/': typeof PricesIndexRoute
+  '/tools/': typeof ToolsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/account': typeof AccountRoute
+  '/ai': typeof AiRoute
+  '/analyses/$id': typeof AnalysesIdRoute
+  '/api/chat': typeof ApiChatRoute
+  '/auth/login': typeof AuthLoginRoute
+  '/auth/reset': typeof AuthResetRoute
+  '/auth/signup': typeof AuthSignupRoute
+  '/prices/$id': typeof PricesIdRoute
+  '/tools/calculator': typeof ToolsCalculatorRoute
+  '/tools/currency': typeof ToolsCurrencyRoute
+  '/tools/datetime': typeof ToolsDatetimeRoute
+  '/tools/percentage': typeof ToolsPercentageRoute
+  '/tools/travel': typeof ToolsTravelRoute
+  '/tools/units': typeof ToolsUnitsRoute
+  '/analyses': typeof AnalysesIndexRoute
+  '/prices': typeof PricesIndexRoute
+  '/tools': typeof ToolsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/account': typeof AccountRoute
+  '/ai': typeof AiRoute
+  '/analyses/$id': typeof AnalysesIdRoute
+  '/api/chat': typeof ApiChatRoute
+  '/auth/login': typeof AuthLoginRoute
+  '/auth/reset': typeof AuthResetRoute
+  '/auth/signup': typeof AuthSignupRoute
+  '/prices/$id': typeof PricesIdRoute
+  '/tools/calculator': typeof ToolsCalculatorRoute
+  '/tools/currency': typeof ToolsCurrencyRoute
+  '/tools/datetime': typeof ToolsDatetimeRoute
+  '/tools/percentage': typeof ToolsPercentageRoute
+  '/tools/travel': typeof ToolsTravelRoute
+  '/tools/units': typeof ToolsUnitsRoute
+  '/analyses/': typeof AnalysesIndexRoute
+  '/prices/': typeof PricesIndexRoute
+  '/tools/': typeof ToolsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/account'
+    | '/ai'
+    | '/analyses/$id'
+    | '/api/chat'
+    | '/auth/login'
+    | '/auth/reset'
+    | '/auth/signup'
+    | '/prices/$id'
+    | '/tools/calculator'
+    | '/tools/currency'
+    | '/tools/datetime'
+    | '/tools/percentage'
+    | '/tools/travel'
+    | '/tools/units'
+    | '/analyses/'
+    | '/prices/'
+    | '/tools/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/account'
+    | '/ai'
+    | '/analyses/$id'
+    | '/api/chat'
+    | '/auth/login'
+    | '/auth/reset'
+    | '/auth/signup'
+    | '/prices/$id'
+    | '/tools/calculator'
+    | '/tools/currency'
+    | '/tools/datetime'
+    | '/tools/percentage'
+    | '/tools/travel'
+    | '/tools/units'
+    | '/analyses'
+    | '/prices'
+    | '/tools'
+  id:
+    | '__root__'
+    | '/'
+    | '/account'
+    | '/ai'
+    | '/analyses/$id'
+    | '/api/chat'
+    | '/auth/login'
+    | '/auth/reset'
+    | '/auth/signup'
+    | '/prices/$id'
+    | '/tools/calculator'
+    | '/tools/currency'
+    | '/tools/datetime'
+    | '/tools/percentage'
+    | '/tools/travel'
+    | '/tools/units'
+    | '/analyses/'
+    | '/prices/'
+    | '/tools/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AccountRoute: typeof AccountRoute
+  AiRoute: typeof AiRoute
+  AnalysesIdRoute: typeof AnalysesIdRoute
+  ApiChatRoute: typeof ApiChatRoute
+  AuthLoginRoute: typeof AuthLoginRoute
+  AuthResetRoute: typeof AuthResetRoute
+  AuthSignupRoute: typeof AuthSignupRoute
+  PricesIdRoute: typeof PricesIdRoute
+  ToolsCalculatorRoute: typeof ToolsCalculatorRoute
+  ToolsCurrencyRoute: typeof ToolsCurrencyRoute
+  ToolsDatetimeRoute: typeof ToolsDatetimeRoute
+  ToolsPercentageRoute: typeof ToolsPercentageRoute
+  ToolsTravelRoute: typeof ToolsTravelRoute
+  ToolsUnitsRoute: typeof ToolsUnitsRoute
+  AnalysesIndexRoute: typeof AnalysesIndexRoute
+  PricesIndexRoute: typeof PricesIndexRoute
+  ToolsIndexRoute: typeof ToolsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +273,147 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/account': {
+      id: '/account'
+      path: '/account'
+      fullPath: '/account'
+      preLoaderRoute: typeof AccountRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ai': {
+      id: '/ai'
+      path: '/ai'
+      fullPath: '/ai'
+      preLoaderRoute: typeof AiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/analyses/': {
+      id: '/analyses/'
+      path: '/analyses'
+      fullPath: '/analyses/'
+      preLoaderRoute: typeof AnalysesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/analyses/$id': {
+      id: '/analyses/$id'
+      path: '/analyses/$id'
+      fullPath: '/analyses/$id'
+      preLoaderRoute: typeof AnalysesIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/chat': {
+      id: '/api/chat'
+      path: '/api/chat'
+      fullPath: '/api/chat'
+      preLoaderRoute: typeof ApiChatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth/login': {
+      id: '/auth/login'
+      path: '/auth/login'
+      fullPath: '/auth/login'
+      preLoaderRoute: typeof AuthLoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth/reset': {
+      id: '/auth/reset'
+      path: '/auth/reset'
+      fullPath: '/auth/reset'
+      preLoaderRoute: typeof AuthResetRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth/signup': {
+      id: '/auth/signup'
+      path: '/auth/signup'
+      fullPath: '/auth/signup'
+      preLoaderRoute: typeof AuthSignupRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/prices/': {
+      id: '/prices/'
+      path: '/prices'
+      fullPath: '/prices/'
+      preLoaderRoute: typeof PricesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/prices/$id': {
+      id: '/prices/$id'
+      path: '/prices/$id'
+      fullPath: '/prices/$id'
+      preLoaderRoute: typeof PricesIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tools/': {
+      id: '/tools/'
+      path: '/tools'
+      fullPath: '/tools/'
+      preLoaderRoute: typeof ToolsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tools/calculator': {
+      id: '/tools/calculator'
+      path: '/tools/calculator'
+      fullPath: '/tools/calculator'
+      preLoaderRoute: typeof ToolsCalculatorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tools/currency': {
+      id: '/tools/currency'
+      path: '/tools/currency'
+      fullPath: '/tools/currency'
+      preLoaderRoute: typeof ToolsCurrencyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tools/datetime': {
+      id: '/tools/datetime'
+      path: '/tools/datetime'
+      fullPath: '/tools/datetime'
+      preLoaderRoute: typeof ToolsDatetimeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tools/percentage': {
+      id: '/tools/percentage'
+      path: '/tools/percentage'
+      fullPath: '/tools/percentage'
+      preLoaderRoute: typeof ToolsPercentageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tools/travel': {
+      id: '/tools/travel'
+      path: '/tools/travel'
+      fullPath: '/tools/travel'
+      preLoaderRoute: typeof ToolsTravelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tools/units': {
+      id: '/tools/units'
+      path: '/tools/units'
+      fullPath: '/tools/units'
+      preLoaderRoute: typeof ToolsUnitsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AccountRoute: AccountRoute,
+  AiRoute: AiRoute,
+  AnalysesIdRoute: AnalysesIdRoute,
+  ApiChatRoute: ApiChatRoute,
+  AuthLoginRoute: AuthLoginRoute,
+  AuthResetRoute: AuthResetRoute,
+  AuthSignupRoute: AuthSignupRoute,
+  PricesIdRoute: PricesIdRoute,
+  ToolsCalculatorRoute: ToolsCalculatorRoute,
+  ToolsCurrencyRoute: ToolsCurrencyRoute,
+  ToolsDatetimeRoute: ToolsDatetimeRoute,
+  ToolsPercentageRoute: ToolsPercentageRoute,
+  ToolsTravelRoute: ToolsTravelRoute,
+  ToolsUnitsRoute: ToolsUnitsRoute,
+  AnalysesIndexRoute: AnalysesIndexRoute,
+  PricesIndexRoute: PricesIndexRoute,
+  ToolsIndexRoute: ToolsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
