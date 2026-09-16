@@ -64,6 +64,15 @@ const groups = {
   },
 };
 
+type GroupKey = keyof typeof groups;
+
+const unitEntries = (key: GroupKey) => Object.entries(groups[key].units as UnitMap);
+
+const unitOf = (key: GroupKey, code: string) => {
+  const units = groups[key].units as UnitMap;
+  return units[code] ?? Object.values(units)[0]!;
+};
+
 const tempUnits = { c: "مئوية", f: "فهرنهايت", k: "كلفن" } as const;
 type TempUnit = keyof typeof tempUnits;
 
