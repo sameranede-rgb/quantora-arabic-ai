@@ -30,7 +30,7 @@ export const Route = createFileRoute("/tools/units")({
 
 type UnitMap = Record<string, { label: string; factor: number }>;
 
-const groups: Record<string, { label: string; units: UnitMap }> = {
+const groups = {
   length: {
     label: "الطول",
     units: {
